@@ -13,6 +13,8 @@ public class Earthquake {
 
     private String mEarthquakeDate;
 
+    private String mEarthquakeReports;
+
 
 
     public Earthquake(String earthquakePlace, String earthquakeMagnitude, String earthquakeDate){
