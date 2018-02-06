@@ -14,7 +14,7 @@ public class Earthquake {
     private String mEarthquakeMagnitude;
 
     private Long mTimeInMilliseconds;
-    
+
 
 
     public Earthquake(String earthquakePlace, String earthquakeMagnitude, Long timeInMilliseconds){
