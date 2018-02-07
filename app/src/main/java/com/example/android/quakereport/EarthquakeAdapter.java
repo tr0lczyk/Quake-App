@@ -42,6 +42,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
 
+
+
     @Override
     public View getView(int position, View convertView,  ViewGroup parent) {
         View listItemView = convertView;
@@ -52,8 +54,17 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
             Earthquake currentEarthquake = getItem(position);
 
+
+            String placeInfo = currentEarthquake.getEarthquakePlace();
+            String[] parts = placeInfo.split(",");
+            String parts1 = parts[0];
+            String parts2 = parts[1];
+
+            TextView where = (TextView) listItemView.findViewById(R.id.where);
+            where.setText(parts1);
+
             TextView place = (TextView) listItemView.findViewById(R.id.place);
-            place.setText(currentEarthquake.getEarthquakePlace());
+            place.setText(parts2);
 
             TextView magnitude = (TextView) listItemView.findViewById(R.id.magnitude);
             magnitude.setText(currentEarthquake.getEarthquakeMagnitude());
