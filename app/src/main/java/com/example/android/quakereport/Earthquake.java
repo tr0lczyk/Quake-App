@@ -11,13 +11,13 @@ public class Earthquake {
 
     private String mEarthquakePlace;
 
-    private String mEarthquakeMagnitude;
+    private Double mEarthquakeMagnitude;
 
     private Long mTimeInMilliseconds;
 
 
 
-    public Earthquake(String earthquakePlace, String earthquakeMagnitude, Long timeInMilliseconds){
+    public Earthquake(String earthquakePlace, Double earthquakeMagnitude, Long timeInMilliseconds){
         mEarthquakePlace = earthquakePlace;
         mEarthquakeMagnitude = earthquakeMagnitude;
         mTimeInMilliseconds = timeInMilliseconds;
@@ -27,7 +27,7 @@ public class Earthquake {
         return mEarthquakePlace;
     }
 
-    public String getEarthquakeMagnitude(){
+    public Double getEarthquakeMagnitude(){
         return mEarthquakeMagnitude;
     }
 
