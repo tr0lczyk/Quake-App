@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
-
+    private static final String LOCATION_SEPARATOR = " of ";
 
     public EarthquakeAdapter(Activity context, ArrayList<Earthquake> earthquakes){
         super(context,0,earthquakes);
@@ -56,9 +56,17 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
 
             String placeInfo = currentEarthquake.getEarthquakePlace();
-            String[] parts = placeInfo.split(",");
-            String parts1 = parts[0];
-            String parts2 = parts[1];
+            String parts1;
+            String parts2;
+
+            if(placeInfo.contains(LOCATION_SEPARATOR)){
+                String[] parts = placeInfo.split(LOCATION_SEPARATOR);
+                parts1 = parts[0] + LOCATION_SEPARATOR;
+                parts2 = parts[1];
+            } else {
+                parts1 = getContext().getString(R.string.near_the);
+                parts2 = placeInfo;
+            }
 
             TextView where = (TextView) listItemView.findViewById(R.id.where);
             where.setText(parts1);
