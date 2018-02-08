@@ -1,12 +1,16 @@
 package com.example.android.quakereport;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.graphics.drawable.GradientDrawable;
@@ -99,7 +103,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_earthquake,parent,
                     false);
 
-            Earthquake currentEarthquake = getItem(position);
+            final Earthquake currentEarthquake = getItem(position);
 
 
             String placeInfo = currentEarthquake.getEarthquakePlace();
